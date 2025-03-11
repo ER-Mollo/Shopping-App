@@ -2,6 +2,11 @@ import { useState, useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
+import BarcodeScanner from "../components/BarcodeScanner";
+
+const handleScan = (code) => {
+    alert(`Scanned barcode: ${code}`);
+};
 
 export default function Home() {
     const [products, setProducts] = useState([]);
