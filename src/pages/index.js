@@ -8,7 +8,12 @@ export default function Home() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const res = await fetch(`/api/products?search=${searchTerm}`);
+            let url = "https://fakestoreapi.com/products";
+            if (searchTerm) {
+                url += `?search=${searchTerm}`; // Fake Store API doesn't support search, but you can filter locally
+            }
+
+            const res = await fetch(url);
             const data = await res.json();
             setProducts(data);
         };
